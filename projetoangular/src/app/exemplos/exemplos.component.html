@@ -1,0 +1,12 @@
+<h1>Meu título: {{title}}</h1>
+<img [src]='imagem'/>
+@for ( numero of numeros; track numero.id ) {
+  @if (numero.valor > 0) {
+    <p>{{numero.valor}} é maior que zero</p>
+  } @else {
+    <p>{{numero.valor}} é menor ou igual a zero</p>
+  }
+}
+
+<button (click)=acao() (mouseover)=destacar() (mouseout)=desfazerDestaque()>Botão</button>
+<p [class]="estiloContador">Contador: {{contador}}</p>

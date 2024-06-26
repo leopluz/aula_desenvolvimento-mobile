@@ -1,0 +1,17 @@
+* {
+    margin-left: 100px;
+}
+
+h1 {
+    color: brown
+}
+
+.destaque {
+    color:red;
+    background-color: black;
+    font-size: 40px;
+}
+.contador {
+    font-size: 40px;
+    color: brown;
+}
