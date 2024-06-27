@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Capitulo } from '../../models/capitulo';
 
 @Component({
   selector: 'app-capitulo',
@@ -8,5 +9,6 @@ import { Component } from '@angular/core';
   styleUrl: './capitulo.component.css'
 })
 export class CapituloComponent {
-
+  @Input() numero = '0';
+  @Input() titulo = 'Vazio';
 }

@@ -1,0 +1,8 @@
+<h2>{{ titulo }}</h2>
+<h3>{{ autor }}</h3>
+
+@for (capitulo of capitulos; track capitulo.numero) {
+    <app-capitulo numero={{capitulo.numero}} titulo={{capitulo.titulo}}>
+        {{capitulo.conteudo}}
+    </app-capitulo>
+}
