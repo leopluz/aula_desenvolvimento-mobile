@@ -1,2 +1,7 @@
 <h4>{{numero}}. {{titulo}}</h4>
-<ng-content/>
+<button (click)=incrementarLikes()>
+    Likes: {{contadorLikes}}
+</button>
+<p>
+    <ng-content/>
+</p>

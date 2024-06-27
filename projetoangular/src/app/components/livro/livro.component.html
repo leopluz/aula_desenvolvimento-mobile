@@ -1,8 +1,10 @@
 <h2>{{ titulo }}</h2>
 <h3>{{ autor }}</h3>
+<p>Likes do Livro: {{contadorLikesLivro}}</p>
 
 @for (capitulo of capitulos; track capitulo.numero) {
-    <app-capitulo numero={{capitulo.numero}} titulo={{capitulo.titulo}}>
+    <app-capitulo numero={{capitulo.numero}} titulo={{capitulo.titulo}}
+        (incrementouLikes)=incrementarLikesCapitulos($event)>
         {{capitulo.conteudo}}
     </app-capitulo>
 }
