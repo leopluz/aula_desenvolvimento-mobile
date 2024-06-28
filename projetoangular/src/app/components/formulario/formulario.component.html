@@ -1,1 +1,27 @@
-<p>formulario works!</p>
+<div>
+    <label for="inputNome">
+        Nome:
+        <input id="inputNome" type="text" [(ngModel)]="nome" />
+    </label>
+    <button (click)="mostrarNome()">Exibir Nome</button>
+    <p>Nome atual: {{nome}}</p>
+</div>
+
+<div>
+    <form [formGroup]="formularioPerfil"
+            (ngSubmit)="enviarFormulario()">
+        <label for="inputNomeCompleto">
+            Nome Completo:
+            <input id="inputNomeCompleto"
+                    type="text" formControlName="nomeCompleto" />
+        </label>
+        <br/>
+        <label for="inputEmail">
+            E-mail:
+            <input id="inputEmail"
+                    type="text" formControlName="email" />
+        </label>
+        <br/>
+        <button type="submit" [disabled]="!formularioPerfil.valid">Enviar</button>
+    </form>
+</div>
