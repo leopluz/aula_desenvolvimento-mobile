@@ -2,6 +2,12 @@
 <button (click)=incrementarLikes()>
     Likes: {{contadorLikes}}
 </button>
+@defer (on interaction) {
 <p>
     <ng-content/>
 </p>
+} @placeholder {
+<p>Conteúdo do capítulo</p>
+} @loading (minimum 5s) {
+<p>Carregando conteúdo...</p>
+}
