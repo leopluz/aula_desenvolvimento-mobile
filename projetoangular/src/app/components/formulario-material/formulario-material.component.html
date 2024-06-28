@@ -1,0 +1,19 @@
+<mat-toolbar>
+    <span>Perfil do Usuário</span>
+</mat-toolbar>
+
+<form [formGroup]="formularioPerfil" (ngSubmit)="enviarFormulario()">
+    <mat-form-field>
+        <input type="text" placeholder="Digite seu nome" formControlName="nomeCompleto" matInput/>
+    </mat-form-field>
+
+    <mat-form-field>
+        <input type="email" placeholder="Digite seu e-mail" formControlName="email" matInput/>
+    </mat-form-field>
+
+    <button type="submit" mat-raised-button>Enviar Formulário</button>
+
+
+<p>{{ nomeCompleto!.value }}</p>
+<p>{{ email!.value }}</p>
+</form>
