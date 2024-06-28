@@ -24,4 +24,8 @@
         <br/>
         <button type="submit" [disabled]="!formularioPerfil.valid">Enviar</button>
     </form>
+
+    <h2>Dados Pessoais</h2>
+    <p>Nome: {{ formularioPerfil.value.nomeCompleto }}</p>
+    <p>E-mail: {{ formularioPerfil.value.email }}</p>
 </div>
