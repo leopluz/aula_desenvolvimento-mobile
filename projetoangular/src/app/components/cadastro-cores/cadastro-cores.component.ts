@@ -36,9 +36,11 @@ export class CadastroCoresComponent {
     }
   );
 
+  novaArray: any[]= [];
   enviarFormulario(cor : any) {
-    this.conteudoTabela.data.push( { nome: cor.nome, pantone: cor.pantone, codigoRgb: cor.codigoRgb } );
-    this.conteudoTabela.data = this.conteudoTabela.data;
+    this.novaArray = this.conteudoTabela.data.slice();
+    this.novaArray.push( { nome: cor.nome, pantone: cor.pantone, codigoRgb: cor.codigoRgb } );
+    this.conteudoTabela.data = this.novaArray;
   }
 
 }
