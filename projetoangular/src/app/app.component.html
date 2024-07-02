@@ -1,15 +1,45 @@
-<nav>
-    <ul>
-        <li><a routerLink="/">Home</a></li>
-        <li><a routerLink="/biblioteca">Biblioteca</a></li>
-        <li><a routerLink="/exemplos">Exemplos</a></li>
-        <li><a routerLink="/formulario">Formulário</a></li>
-        <li><a routerLink="/formulario-material">Formulário Material</a></li>
-        <li><a routerLink="/tabela-material">Tabela Material</a></li>
-        <li><a routerLink="/cadastro-cores">Cadastro de Cores</a></li>
-    </ul>
-</nav>
+<body class="mat-app-background">
 
-<h1>MEU APP</h1>
+<mat-toolbar>
+    <span>
+        <button mat-icon-button [matMenuTriggerFor]="meuMenu" 
+                #menuTrigger="matMenuTrigger" (click)="menuTrigger.openMenu()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <mat-menu #meuMenu="matMenu">
+            <button mat-menu-item routerLink="/">
+                <mat-icon>home</mat-icon>
+                <span>Home</span>
+            </button>
+            <button mat-menu-item routerLink="/biblioteca">
+                <mat-icon>menu_book</mat-icon>
+                <span>Biblioteca</span>
+            </button>
+            <button mat-menu-item routerLink="/exemplos">
+                <mat-icon>hexagon</mat-icon>
+                <span>Exemplos</span>
+            </button>
+            <button mat-menu-item routerLink="/formulario">
+                <mat-icon>feed</mat-icon>
+                <span>Formulário</span>
+            </button>
+            <button mat-menu-item routerLink="/formulario-material">
+                <mat-icon>view_compact_alt</mat-icon>
+                <span>Formulário Material</span>
+            </button>
+            <button mat-menu-item routerLink="/tabela-material">
+                <mat-icon>toc</mat-icon>
+                <span>Tabela Material</span>
+            </button>
+            <button mat-menu-item routerLink="/cadastro-cores">
+                <mat-icon>format_paint</mat-icon>
+                <span>Cadastro de Cores</span>
+            </button>
+        </mat-menu>
+    </span>
+    <span>MEU APP</span>
+</mat-toolbar>
 
 <router-outlet />
+
+</body>

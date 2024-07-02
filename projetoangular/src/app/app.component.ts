@@ -1,12 +1,21 @@
 import { Component, Input } from '@angular/core';
+import { MatIconButton } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { ExemplosComponent } from './components/exemplos/exemplos.component';
-import { LivroComponent } from './components/livro/livro.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [ExemplosComponent,LivroComponent,RouterOutlet,RouterLink],
+  imports: [
+    RouterOutlet,
+    RouterLink,
+    MatToolbarModule,
+    MatIconButton,
+    MatIconModule,
+    MatMenuModule
+  ],
   templateUrl: 'app.component.html',
   styleUrl: 'app.component.css'
 })
