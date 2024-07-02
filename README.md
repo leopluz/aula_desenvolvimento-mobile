@@ -48,3 +48,55 @@ Geração de Componentes (recomendado usar components/**nome-do-componene**)
 ```bash
 ng generate component nome-do-componente
 ```
+
+## Criação de projeto para Android a partir do Angular
+
+Instalação dos pacotes do Capacitor
+
+```bash
+npm install @capacitor/core @capacitor/cli
+npx cap init
+```
+
+Adicionar pacotes específicos para Android e iOS (pode ser utilizado somente um deles)
+
+```bash
+npm install @capacitor/android
+npm install @capacitor/ios
+```
+
+Montar a aplicação em formato para publicação (build)
+
+```bash
+ng build
+```
+
+Alterar a propriedade **webDir** no arquivo **capacitor.config.js**
+
+- Adicionar **\<nomedoprojeto\>/browser**
+
+```javascript
+const config: CapacitorConfig = {
+  appId: 'com.example.app',
+  appName: 'projetoangular',
+  webDir: 'dist/projetoangular/browser'
+};
+```
+
+Adicionar os arquivos referentes à plataforma Android
+
+```bash
+npx cap add android
+```
+
+Sincronizar os arquivos
+
+```bash
+npx cap sync
+```
+
+Abrir o projeto Android no Android Studio
+
+```bash
+npx cap open android 
+```
