@@ -1,5 +1,9 @@
-mat-form-field, button {
+mat-form-field, button, mat-error {
     width: 100%;
+}
+
+mat-error {
+    text-align: center;
 }
 
 form {

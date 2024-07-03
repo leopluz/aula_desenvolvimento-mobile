@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButton } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIcon } from '@angular/material/icon';
 import { MatFormField, MatInput } from '@angular/material/input';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatToolbar } from '@angular/material/toolbar';
@@ -13,9 +15,10 @@ import { MatToolbar } from '@angular/material/toolbar';
     ReactiveFormsModule,
     MatInput,
     MatToolbar,
-    MatFormField,
+    MatFormFieldModule,
     MatButton,
-    MatTableModule
+    MatTableModule,
+    MatIcon
   ],
   templateUrl: './cadastro-cores.component.html',
   styleUrl: './cadastro-cores.component.css'
@@ -31,7 +34,7 @@ export class CadastroCoresComponent {
   formularioCores = new FormGroup(
     {
       nome: new FormControl('', Validators.required),
-      pantone: new FormControl('', [ Validators.required ]),
+      pantone: new FormControl(''),
       codigoRgb: new FormControl('', [ Validators.required ]),
     }
   );
@@ -39,8 +42,10 @@ export class CadastroCoresComponent {
   novaArray: any[]= [];
   enviarFormulario(cor : any) {
     this.novaArray = this.conteudoTabela.data.slice();
-    this.novaArray.push( { nome: cor.nome, pantone: cor.pantone, codigoRgb: cor.codigoRgb } );
+    this.novaArray.push( { nome: cor.nome, pantone: cor.pantone, codigoRgb: "#" + cor.codigoRgb } );
     this.conteudoTabela.data = this.novaArray;
   }
+
+  mensagemErro = "O formulário contém erros. Revise as informações."
 
 }

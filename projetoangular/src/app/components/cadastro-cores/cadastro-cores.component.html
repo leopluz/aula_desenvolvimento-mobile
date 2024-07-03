@@ -4,7 +4,7 @@
 
 <form [formGroup]="formularioCores" (ngSubmit)="enviarFormulario(formularioCores.value)">
     <mat-form-field>
-        <input type="text" placeholder="Digite o nome da cor" formControlName="nome" matInput/>
+        <input type="text" placeholder="Digite o nome da cor" formControlName="nome" matInput required/>
     </mat-form-field>
 
     <mat-form-field>
@@ -12,10 +12,18 @@
     </mat-form-field>
 
     <mat-form-field>
-        <input type="text" placeholder="Digite o código RGB" formControlName="codigoRgb" matInput/>
+
+        <input type="text" placeholder="Digite o código RGB" formControlName="codigoRgb" 
+                pattern="[0-9A-Fa-f]{6}" matInput required />
+        <span matTextPrefix>#</span>
+        <mat-icon matTextSuffix>palette</mat-icon>
     </mat-form-field>
 
-    <button type="submit" mat-raised-button>Cadastrar Cor</button>
+    <button type="submit" mat-raised-button [disabled]="formularioCores.invalid">Cadastrar Cor</button>
+
+    @if (formularioCores.invalid) {
+        <mat-error>{{mensagemErro}}</mat-error>
+    }
 </form>
 
 
