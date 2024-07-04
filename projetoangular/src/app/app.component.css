@@ -1,5 +1,33 @@
-h1 {
-    color:blue;
-    text-align: center;
-    font-size: 48px;
+.menuNovo {
+    display: flex;
+    flex-flow: row wrap;
+
+    list-style: none;
+
+    padding-inline-start: 0px;
+}
+
+.menuNovo .itemMenu span {
+    display: none;
+}
+
+@media all and (max-width: 500px) {
+    .menuNovo {
+        flex-flow: column;
+    }
+
+    .menuNovo .itemMenu span {
+        display: block;
+    }
+
+    .menuNovo button {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .menuNovo .itemMenu {
+        display: flex;
+        justify-content: flex-start;
+        width: 200px;
+    }
 }

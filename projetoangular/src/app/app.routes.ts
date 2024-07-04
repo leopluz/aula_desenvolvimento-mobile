@@ -5,6 +5,7 @@ import { FormularioComponent } from './components/formulario/formulario.componen
 import { FormularioMaterialComponent } from './components/formulario-material/formulario-material.component';
 import { TabelaMaterialComponent } from './components/tabela-material/tabela-material.component';
 import { CadastroCoresComponent } from './components/cadastro-cores/cadastro-cores.component';
+import { FlexboxExemploComponent } from './components/flexbox-exemplo/flexbox-exemplo.component';
 
 export const routes: Routes = [
     { path: '', title: 'Meu App', component: TabelaMaterialComponent },
@@ -13,5 +14,6 @@ export const routes: Routes = [
     { path: 'formulario', title: 'Formulário', component: FormularioComponent },
     { path: 'formulario-material', title: 'Formulário Material', component: FormularioMaterialComponent },
     { path: 'tabela-material', title: 'Tabela Material', component: TabelaMaterialComponent },
-    { path: 'cadastro-cores', title: 'Cadastro de Cores', component: CadastroCoresComponent }
+    { path: 'cadastro-cores', title: 'Cadastro de Cores', component: CadastroCoresComponent },
+    { path: 'flexbox-exemplo', title: 'Exemplo Flexbox', component: FlexboxExemploComponent }
 ];

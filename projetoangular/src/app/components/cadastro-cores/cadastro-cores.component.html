@@ -4,26 +4,26 @@
 
 <form [formGroup]="formularioCores" (ngSubmit)="enviarFormulario(formularioCores.value)">
     <mat-form-field>
-        <input type="text" placeholder="Digite o nome da cor" formControlName="nome" matInput required/>
+        <input type="text" placeholder="Digite o nome da cor"
+        formControlName="nome" matInput required
+        (blur)="atualizarMensagemErroNome()"/>
+        <mat-error>{{mensagemErroNome}}</mat-error>
     </mat-form-field>
 
     <mat-form-field>
-        <input type="text" placeholder="Digite o nome Pantone" formControlName="pantone" matInput/>
+        <input type="text" placeholder="Digite o nome Pantone" formControlName="pantone" matInput />
     </mat-form-field>
 
     <mat-form-field>
 
-        <input type="text" placeholder="Digite o código RGB" formControlName="codigoRgb" 
-                pattern="[0-9A-Fa-f]{6}" matInput required />
+        <input type="text" placeholder="Digite o código RGB" formControlName="codigoRgb" pattern="[0-9A-Fa-f]{6}"
+            matInput required (blur)="atualizarMensagemErroCodigoRgb()"/>
         <span matTextPrefix>#</span>
         <mat-icon matTextSuffix>palette</mat-icon>
+        <mat-error>{{mensagemErroCodigoRgb}}</mat-error>
     </mat-form-field>
 
-    <button type="submit" mat-raised-button [disabled]="formularioCores.invalid">Cadastrar Cor</button>
-
-    @if (formularioCores.invalid) {
-        <mat-error>{{mensagemErro}}</mat-error>
-    }
+    <button type="submit" mat-raised-button>Cadastrar Cor</button>
 </form>
 
 
